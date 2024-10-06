@@ -6,6 +6,8 @@ import Link from "next/link";
 // import Badge from "@/components/Badge"; // Adjust the import path as necessary
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import Footer from './Footer';
+import Video from './Video';
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 
 const Hero = () => {
   const cards = data.map((card, index) => (
@@ -35,8 +37,37 @@ const Hero = () => {
       </h2>
       <Carousel items={cards} />
       </div>
+
+      <div className="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-center text-white">
+  {/* Top Section */}
+  <p className="font-light text-lg tracking-wider uppercase">Journey of a Warrior</p>
+  <p className="text-4xl font-bold leading-snug mt-2">
+    Relive the Legend.
+    <br />
+    Become the God of War.
+  </p>
+
+  {/* Video Section */}
+  <div className="relative w-full h-full flex justify-center items-center">
+    {/* The video should cover the entire background */}
+    <div className="absolute inset-0 w-full h-full -z-10">
+      <Video />
+    </div>
+
+    {/* Overlay Text */}
+    <div className=" opacity-40 absolute top-36 inset-0 flex justify-center items-center">
+      <p className="text-5xl font-bold tracking-wider opacity-90">Embrace Your Destiny</p>
+    </div>
+
+    {/* Scroll Hint */}
+    <div className="absolute bottom-10 w-full text-center">
+      <p className="text-lg opacity-60">Scroll down to uncover the saga.</p>
+    </div>
+  </div>
+</div>
+
       
-      <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+      <div className="relative top-96 overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
       <MacbookScroll
         title={
           <span>
@@ -55,6 +86,14 @@ const Hero = () => {
     <div className='bg-white text-center flex justify-center items-center'>
           <p className='text-6xl font-bold text-black'>Unleash the Power of the Gods
           Forge Your Own Destiny</p>
+
+    </div>
+
+    <div>
+      <p>Unleash the Power of the Gods Forge Your Own Destiny</p>
+      "use client";
+
+
 
     </div>
 
